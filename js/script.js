@@ -38,13 +38,13 @@ async function loadTableData() {
                 }
             });
 
-            const sem4Cell = document.createElement('td');
-            sem4Cell.textContent = 'Afstuderen';
-            sem4Cell.rowSpan = adData.length;
-            if (tbody.children.length === 0) row.appendChild(sem4Cell);
-
             row.appendChild(semCell);
         });
+
+        const sem4Cell = document.createElement('td');
+        sem4Cell.textContent = 'Afstuderen';
+        sem4Cell.rowSpan = adData.length;
+        if (tbody.children.length === 0) row.appendChild(sem4Cell);
 
         tbody.appendChild(row);
     });
