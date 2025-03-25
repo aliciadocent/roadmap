@@ -34,7 +34,7 @@ async function loadTableData() {
                     badge.className = `badge ${semesterInfo.kleur || ''}`;
                     badge.textContent = semesterInfo.naam;
                     semCell.appendChild(badge);
-                    semCell.appendChild(document.createTextNode('<br />'));
+                    semCell.appendChild(document.createTextNode(''));
                 }
             });
 
