@@ -42,13 +42,13 @@
     },
     {
         "id": 8,
-        "naam": "Software Design &amp; Engineering",
+        "naam": "Software Design & Engineering",
         "locatie": ["Eindhoven", "Tilburg"],
         "kleur": "text-bg-dark"
     },
     {
         "id": 9,
-        "naam": "Network &amp; Cloud Automation",
+        "naam": "Network & Cloud Automation",
         "locatie": ["Eindhoven", "Tilburg"],
         "kleur": "text-bg-primary"
     },
@@ -96,7 +96,7 @@
     },
     {
         "id": 17,
-        "naam": "Industry 4.0 &amp; Internet of Things",
+        "naam": "Industry 4.0 & Internet of Things",
         "locatie": ["Eindhoven", "Tilburg"],
         "kleur": "text-bg-primary"
     },
