@@ -1,0 +1,21 @@
+#roadmapBlock {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 50px;
+  position: relative;
+  font-size: 0.7rem;
+}
+
+.block {
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0 0 0;
+  background-color: green;
+}
+
+.block.highlight {
+    background-color: #fef08a;
+    border-color: #facc15;
+  }

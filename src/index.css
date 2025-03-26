@@ -1,11 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +15,88 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container {
+  max-width: 1200px;
+}
+.container-fluid {
+  width: 100%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.grid-col-1 {
+  grid-column: 1 span;
+}
+.grid-col-2 {
+  grid-column: 2 span;
+}
+.grid-col-3 {
+  grid-column: 3 span;
+}
+.grid-col-4 {
+  grid-column: 4 span;
+}
+.grid-col-5 {
+  grid-column: 5 span;
+}
+.grid-col-6 {
+  grid-column: 6 span;
+}
+.grid-col-7 {
+  grid-column: 7 span;
+}
+.grid-col-8 {
+  grid-column: 8 span;
+}
+.grid-col-9 {
+  grid-column: 9 span;
+}
+.grid-col-10 {
+  grid-column: 10 span;
+}
+.grid-col-11 {
+  grid-column: 11 span;
+}
+.grid-col-12 {
+  grid-column: 12 span;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.grid-row-1 {
+  grid-row: 1 span;
 }
-button:hover {
-  border-color: #646cff;
+.grid-row-2 {
+  grid-row: 2 span;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.grid-row-3 {
+  grid-row: 3 span;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.grid-row-4 {
+  grid-row: 4 span;
+}
+.grid-row-5 {
+  grid-row: 5 span;
+}
+.grid-row-6 {
+  grid-row: 6 span;
+}
+.grid-row-7 {
+  grid-row: 7 span;
+}
+.grid-row-8 {
+  grid-row: 8 span;
+}
+.grid-row-9 {
+  grid-row: 9 span;
+}
+.grid-row-10 {
+  grid-row: 10 span;
+}
+.grid-row-11 {
+  grid-row: 11 span;
+}
+.grid-row-12 {
+  grid-row: 12 span;
 }

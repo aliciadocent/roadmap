@@ -1,0 +1,204 @@
+[
+  {
+    "id": 1,
+    "naam": "Startsemester",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "ad": [2, 3, 4, 5, 6, 7, 8],
+    "functies": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "semester": "startsemester"
+  },
+  {
+    "id": 2,
+    "naam": "Business IT & Data Analysis",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-primary",
+    "ad": [9, 12, 14, 18],
+    "functies":[1, 4, 6, 8, 10],
+    "semester": "introductie"
+  },
+  {
+    "id": 3,
+    "naam": "Interactive Media",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-secondary",
+    "ad": [10, 11, 15, 14],
+    "functies":[2, 9, 8],
+    "semester": "introductie"
+  },
+  {
+    "id": 4,
+    "naam": "Game Development",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-success",
+    "ad": [10, 11, 14],
+    "functies":[2, 3, 8],
+    "semester": "introductie"
+  },
+  {
+    "id": 5,
+    "naam": "Network & Cloud Basics",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-danger",
+    "ad": [9, 14, 8],
+    "functies":[5],
+    "semester": "introductie"
+  },
+  {
+    "id": 6,
+    "naam": "AI Basics",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-warning",
+    "ad": [12, 14, 8, 18],
+    "functies":[6, 10],
+    "semester": "introductie"
+  },
+  {
+    "id": 7,
+    "naam": "Intelligent Technologies",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-info",
+    "ad": [13, 14, 8],
+    "functies":[7],
+    "semester": "introductie"
+  },
+  {
+    "id": 8,
+    "naam": "Software Design & Engineering",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-dark",
+    "ad": [13, 14, 8, 15],
+    "functies":[7, 9],
+    "semester": "introductie"
+  },
+  {
+    "id": 9,
+    "naam": "Network & Cloud Automation",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-primary",
+    "ad": [
+      {
+        "functie": "Junior Cloud Engineer",
+        "volgende": [20]
+      }
+    ],
+    "semester": "main"
+  },
+  {
+    "id": 10,
+    "naam": "Media Creation",
+    "locatie": ["Eindhoven"],
+    "kleur": "text-bg-secondary",
+    "ad": [
+      {
+        "functie": "Digital Media Operator",
+        "volgende": [20]
+      }
+    ],
+    "semester": "main"
+  },
+  {
+    "id": 11,
+    "naam": "Mobile Apps Development",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-success",
+    "ad": [
+      {
+        "functie": "Junior App Developer",
+        "volgende": [20]
+      }
+    ],
+    "semester": "main"
+  },
+  {
+    "id": 12,
+    "naam": "Business IT & Data Analysis",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-warning",
+    "ad": [
+      {
+        "functie": "Junior Application Manager",
+        "volgende": [20]
+      },
+      {
+        "functie": "Junior Data & BI Analist",
+        "volgende": [20]
+      }
+    ],
+    "semester": "main"
+  },
+  {
+    "id": 13,
+    "naam": "Intelligent Devices",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-info",
+    "ad": [
+      {
+        "functie": "Junior Embedded Software Developer",
+        "volgende": [20]
+      }
+    ],
+    "semester": "main"
+  },
+  {
+    "id": 14,
+    "naam": "Cyber Security Essentials",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-dark",
+    "ad": [
+      {
+        "functie": "Junior Ethical Hacker (Pentester)",
+        "volgende": [20]
+      }
+    ],
+    "semester": "main"
+  },
+  {
+    "id": 15,
+    "naam": "Front End Development",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-light",
+    "ad": [
+      {
+        "functie": "Junior Front End Developer",
+        "volgende": [20]
+      }
+    ],
+    "semester": "main"
+  },
+  {
+    "id": 17,
+    "naam": "Industry 4.0 & Internet of Things",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-primary",
+    "ad": [
+      {
+        "functie": "Smart Industry System Operator",
+        "volgende": [20]
+      }
+    ],
+    "semester": "main"
+  },
+  {
+    "id": 18,
+    "naam": "Applied Generative AI",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "kleur": "text-bg-primary",
+    "ad": [
+      {
+        "functie": "Prompt Engineer",
+        "volgende": [20]
+      },
+      {
+        "functie": "Software Prompt (AI Integration) Engineer",
+        "volgende": [20]
+      }
+    ],
+    "semester": "main"
+  },
+  {
+    "id": 20,
+    "naam": "Afstuderen Ad",
+    "locatie": ["Eindhoven", "Tilburg"],
+    "semester": "afstuderen"
+  }
+]
