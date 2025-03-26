@@ -1,6 +1,6 @@
 async function generateMermaidDiagrams() {
-  const ad = await fetch("ad.json").then((res) => res.json());
-  const semesters = await fetch("semesters.json").then((res) => res.json());
+  const ad = await fetch("json/ad.json").then((res) => res.json());
+  const semesters = await fetch("json/semesters.json").then((res) => res.json());
 
   const container = document.createElement("section");
   container.className = "container my-5";
