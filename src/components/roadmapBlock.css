@@ -6,9 +6,9 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 50px;
+  grid-gap: 10px;
   position: relative;
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 
 .block {
@@ -17,9 +17,21 @@
   padding: 10px;
   margin: 10px 0 0 0;
   background-color: var(--color-block);
-  opacity: 0.4;
 }
 
-.block.highlight {
+.block.chosen {
+  background-color: #fde68a;
+  border-color: #f59e0b;
   opacity: 1;
+}
+
+.block.future {
+  background-color: #bbf7d0;
+  border-color: #22c55e;
+  opacity: 1;
+}
+
+.block {
+  cursor: pointer;
+  transition: all 0.2s ease;
 }

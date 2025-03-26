@@ -7,9 +7,8 @@ export default function RoadmapBlock() {
   const [mainSemesters, setMainSemesters] = useState([]);
   const [functies, setFuncties] = useState([]);
   const [rowLength, setRowLength] = useState(0);
-  const [highlightIds, setHighlightIds] = useState([]);
-  const [highlightFunctieIds, setHighlightFunctieIds] = useState([]);
   const containerRef = useRef();
+  const [roadmap, setRoadmap] = useState([null, null, null]);
 
   useEffect(() => {
     async function loadData() {
@@ -34,34 +33,65 @@ export default function RoadmapBlock() {
     loadData();
   }, []);
 
-  const getHighlightPath = (startId, visited = new Set()) => {
-    if (visited.has(startId)) return { ids: [], functies: [] };
-    visited.add(startId);
+  const handleBlockClick = (id) => {
+    const block = semesters.find((s) => s.id === id);
+    if (!block) return;
 
-    const start = semesters.find((s) => s.id === startId);
-    if (!start) return { ids: [], functies: [] };
+    const newRoadmap = [...roadmap];
 
-    let ids = [startId];
-    let functies = start.functies || [];
-
-    if (start.ad) {
-      start.ad.forEach((nextId) => {
-        const result = getHighlightPath(nextId, visited);
-        ids = [...ids, ...result.ids];
-        functies = [...functies, ...result.functies];
-      });
+    switch (block.semester) {
+      case "startsemester":
+        newRoadmap[0] = id;
+        newRoadmap[1] = null;
+        newRoadmap[2] = null;
+        break;
+      case "introductie":
+        newRoadmap[1] = id;
+        newRoadmap[2] = null;
+        break;
+      case "main":
+        newRoadmap[2] = id;
+        break;
+      default:
+        break;
     }
 
-    return { ids: [...new Set(ids.concat(20))], functies: [...new Set(functies)] };
+    setRoadmap(newRoadmap);
+  };
+
+  const getAllFutureIds = (id, visited = new Set()) => {
+    if (visited.has(id)) return { ids: [], functies: [] };
+    visited.add(id);
+
+    const block = semesters.find((s) => s.id === id);
+    if (!block) return { ids: [], functies: [] };
+
+    let ids = [id];
+    let functies = block.functies || [];
+
+    if (block.ad) {
+      for (const next of block.ad) {
+        const result = getAllFutureIds(next, visited);
+        ids.push(...result.ids);
+        functies.push(...result.functies);
+      }
+    }
+
+    return { ids: [...new Set(ids)], functies: [...new Set(functies)] };
+  };
+
+  const lastChosen = roadmap.slice().reverse().find(Boolean);
+  const { ids: futureIds, functies: futureFuncties } = lastChosen
+    ? getAllFutureIds(lastChosen)
+    : { ids: [], functies: [] };
+
+  const getClass = (id) => {
+    if (roadmap.includes(id)) return "block chosen";
+    if (futureIds.includes(id)) return "block future";
+    return "block";
   };
 
   if (!semesters.length) return <div>Loading...</div>;
-
-  const handleBlockClick = (id) => {
-    const result = getHighlightPath(id);
-    setHighlightIds(result.ids);
-    setHighlightFunctieIds(result.functies);
-  };
 
   return (
     <div className="container" id="roadmapBlock" ref={containerRef}>
@@ -70,7 +100,7 @@ export default function RoadmapBlock() {
       <div className="block grid-col-1">Functie</div>
 
       <div
-        className={`block grid-col-1 grid-row-1 ${highlightIds.includes(1) ? "highlight" : ""}`}
+        className={`${getClass(1)} grid-col-1 grid-row-1`}
         data-id="start"
         onClick={() => handleBlockClick(1)}
       >
@@ -82,7 +112,7 @@ export default function RoadmapBlock() {
           introductieSemesters[i] ? (
             <div
               key={`intro-${i}`}
-              className={`block ${highlightIds.includes(introductieSemesters[i].id) ? "highlight" : ""}`}
+              className={getClass(introductieSemesters[i].id)}
               data-id={`intro-${introductieSemesters[i].id}`}
               onClick={() => handleBlockClick(introductieSemesters[i].id)}
             >
@@ -99,7 +129,7 @@ export default function RoadmapBlock() {
           mainSemesters[i] ? (
             <div
               key={`main-${i}`}
-              className={`block ${highlightIds.includes(mainSemesters[i].id) ? "highlight" : ""}`}
+              className={getClass(mainSemesters[i].id)}
               data-id={`main-${mainSemesters[i].id}`}
               onClick={() => handleBlockClick(mainSemesters[i].id)}
             >
@@ -112,8 +142,9 @@ export default function RoadmapBlock() {
       </div>
 
       <div
-        className={`block grid-col-1 grid-row-1 ${highlightIds.includes(20) ? "highlight" : ""}`}
+        className={`${getClass(20)} grid-col-1 grid-row-1`}
         data-id="end"
+        onClick={() => handleBlockClick(20)}
       >
         Afstuderen
       </div>
@@ -123,7 +154,9 @@ export default function RoadmapBlock() {
           functies[i] ? (
             <div
               key={`functie-${i}`}
-              className={`block ${highlightFunctieIds.includes(i + 1) ? "highlight" : ""}`}
+              className={`block col-1 ${
+                futureFuncties.includes(i + 1) ? "future" : ""
+              }`}
               data-id={`functie-${i}`}
             >
               {functies[i].functie}
