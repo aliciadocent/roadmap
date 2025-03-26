@@ -39,8 +39,8 @@
     "naam": "Network & Cloud Basics",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-danger",
-    "ad": [9, 14, 8],
-    "functies":[5],
+    "ad": [9, 14],
+    "functies":[5, 8],
     "semester": "introductie"
   },
   {
@@ -48,8 +48,8 @@
     "naam": "AI Basics",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-warning",
-    "ad": [12, 14, 8, 18],
-    "functies":[6, 10],
+    "ad": [12, 14, 18],
+    "functies":[6, 10, 8],
     "semester": "introductie"
   },
   {
@@ -57,8 +57,8 @@
     "naam": "Intelligent Technologies",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-info",
-    "ad": [13, 14, 8],
-    "functies":[7],
+    "ad": [13, 14, 17],
+    "functies":[7, 11, 8],
     "semester": "introductie"
   },
   {
@@ -66,8 +66,8 @@
     "naam": "Software Design & Engineering",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-dark",
-    "ad": [13, 14, 8, 15],
-    "functies":[7, 9],
+    "ad": [13, 14, 8, 15, 18, 11],
+    "functies":[7, 9, 12, 3],
     "semester": "introductie"
   },
   {
@@ -75,12 +75,7 @@
     "naam": "Network & Cloud Automation",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-primary",
-    "ad": [
-      {
-        "functie": "Junior Cloud Engineer",
-        "volgende": [20]
-      }
-    ],
+    "functies":[5],
     "semester": "main"
   },
   {
@@ -88,12 +83,7 @@
     "naam": "Media Creation",
     "locatie": ["Eindhoven"],
     "kleur": "text-bg-secondary",
-    "ad": [
-      {
-        "functie": "Digital Media Operator",
-        "volgende": [20]
-      }
-    ],
+    "functies":[2],
     "semester": "main"
   },
   {
@@ -101,12 +91,7 @@
     "naam": "Mobile Apps Development",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-success",
-    "ad": [
-      {
-        "functie": "Junior App Developer",
-        "volgende": [20]
-      }
-    ],
+    "functies": [3],
     "semester": "main"
   },
   {
@@ -114,16 +99,7 @@
     "naam": "Business IT & Data Analysis",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-warning",
-    "ad": [
-      {
-        "functie": "Junior Application Manager",
-        "volgende": [20]
-      },
-      {
-        "functie": "Junior Data & BI Analist",
-        "volgende": [20]
-      }
-    ],
+    "functies": [6, 10],
     "semester": "main"
   },
   {
