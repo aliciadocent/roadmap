@@ -133,12 +133,7 @@
     "naam": "Cyber Security Essentials",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-dark",
-    "ad": [
-      {
-        "functie": "Junior Ethical Hacker (Pentester)",
-        "volgende": [20]
-      }
-    ],
+    "functies": [8],
     "semester": "main",
     "class": "empty"
   },
@@ -147,12 +142,7 @@
     "naam": "Front End Development",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-light",
-    "ad": [
-      {
-        "functie": "Junior Front End Developer",
-        "volgende": [20]
-      }
-    ],
+    "functions": [9],
     "semester": "main",
     "class": "empty"
   },
@@ -161,12 +151,7 @@
     "naam": "Industry 4.0 & Internet of Things",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-primary",
-    "ad": [
-      {
-        "functie": "Smart Industry System Operator",
-        "volgende": [20]
-      }
-    ],
+    "functies":[11],
     "semester": "main",
     "class": "empty"
   },
@@ -175,16 +160,7 @@
     "naam": "Applied Generative AI",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-primary",
-    "ad": [
-      {
-        "functie": "Prompt Engineer",
-        "volgende": [20]
-      },
-      {
-        "functie": "Software Prompt (AI Integration) Engineer",
-        "volgende": [20]
-      }
-    ],
+    "functies": [12, 10],
     "semester": "main",
     "class": "empty"
   },

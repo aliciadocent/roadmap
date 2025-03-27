@@ -56,6 +56,7 @@ export default function RoadmapBlock() {
       }
 
       case "introductie": {
+        console.log(id);
         const clicked = introductieSemesters[listId];
         if (clicked?.class === "clickable") {
           // zet start op 'passed'
@@ -72,9 +73,17 @@ export default function RoadmapBlock() {
             )
           );
 
-          // maak main semesters clickable
+          // Stap 1: Vind het geklikte introductie-object
+          const clickedIntro = introductieSemesters.find((s) => s.id === id);
+          // Stap 2: Haal de juiste "ad"-ids op uit het JSON-object
+          const allowedMainIds = clickedIntro?.ad || [];
+          // Stap 3: Zet alleen die mainSemesters clickable
           setMainSemesters((prev) =>
-            prev.map((obj) => ({ ...obj, class: "clickable" }))
+            prev.map((obj) =>
+              allowedMainIds.includes(obj.id)
+                ? { ...obj, class: "clickable" }
+                : { ...obj, class: "not-selected" }
+            )
           );
         }
         break;
@@ -103,6 +112,33 @@ export default function RoadmapBlock() {
 
           setAfstuderenSemesters((prev) =>
             prev.map((s) => ({ ...s, class: "passed" }))
+          );
+
+          const introChoiceObj = introductieSemesters.find(
+            (s) => s.class === "passed" || s.class === "last-selected"
+          );
+          const introChoice = introChoiceObj?.id;
+          const mainChoice = id;
+
+          const allowedFunctieIds = functies
+            .map((f, index) => {
+              // Je functie uit ad.json
+              if (
+                f.semester_2?.includes(introChoice) &&
+                f.semester_3 === mainChoice
+              ) {
+                return index + 1; // of f.id als je die hebt
+              }
+              return null;
+            })
+            .filter((id) => id !== null);
+          // stap 3: Zet alleen die functies op 'passed'
+          setFuncties((prev) =>
+            prev.map((obj, index) =>
+              allowedFunctieIds.includes(index + 1)
+                ? { ...obj, class: "passed" }
+                : { ...obj, class: "not-selected" }
+            )
           );
         }
         break;
@@ -191,7 +227,7 @@ export default function RoadmapBlock() {
           functies[i] ? (
             <div
               key={`functie-${i}`}
-              className={`block col-1 functie`}
+              className={`block col-1 functie ${functies[i].class}`}
               data-id={`functie-${i}`}
             >
               {functies[i].functie}

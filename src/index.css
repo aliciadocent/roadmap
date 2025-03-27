@@ -19,6 +19,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: #fff6ff;
 }
 .container {
   max-width: 1200px;

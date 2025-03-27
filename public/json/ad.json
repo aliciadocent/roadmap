@@ -5,7 +5,8 @@
     "semester_1": 1,
     "semester_2": [2],
     "semester_3": 5,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "semester_1": 1,
     "semester_2": [3, 4],
     "semester_3": 10,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "semester_1": 1,
     "semester_2": [3, 8, 4],
     "semester_3": 11,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "semester_1": 1,
     "semester_2": [2],
     "semester_3": 12,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "semester_1": 1,
     "semester_2": [5],
     "semester_3": 9,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "semester_1": 1,
     "semester_2": [6, 19],
     "semester_3": 12,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 7,
@@ -53,15 +59,17 @@
     "semester_1": 1,
     "semester_2": [7, 8],
     "semester_3": 13,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 8,
     "functie": "Junior Ethical Hacker (Pentester)",
     "semester_1": 1,
-    "semester_2": [19],
+    "semester_2": [2, 3, 4, 5, 6, 7, 8],
     "semester_3": 14,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "semester_1": 1,
     "semester_2": [8, 3],
     "semester_3": 15,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "semester_1": 1,
     "semester_2": [2, 6],
     "semester_3": 18,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "semester_1": 1,
     "semester_2": [7],
     "semester_3": 17,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "semester_1": 1,
     "semester_2": [8],
     "semester_3": 18,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   },
   {
     "id": 13,
@@ -101,6 +113,7 @@
     "semester_1": 1,
     "semester_2": null,
     "semester_3": null,
-    "semester_4": 20
+    "semester_4": 20,
+    "class": "empty"
   }
 ]

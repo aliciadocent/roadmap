@@ -8,6 +8,7 @@
   --color-block-not-selected: #b078af;
   --color-title-year: #636;
   --color-title-function: #007e7b;
+  --color-functies: #51b3af;
 }
 
 #roadmapBlock {
@@ -39,6 +40,7 @@
 .block.last-selected {
   background-color: var(--clock-block-last-selected);
   opacity: 1;
+  color: #fff;
 }
 
 .block.not-selected {
@@ -49,6 +51,7 @@
 .block.passed {
   background-color: var(--clock-block-passed);
   opacity: 1;
+  color: #fff;
 }
 
 .block.year {
@@ -77,4 +80,12 @@
   font-weight: bold;
   font-size:1.0rem;
   opacity: 1;
+}
+
+.functies-rij .block {
+  border-color: var(--color-title-function);
+  background-color: var(--color-functies);
+}
+.functies-rij .block.passed {
+  background-color: var(--color-functies);
 }
