@@ -5,10 +5,11 @@ export default function RoadmapBlock() {
   const [semesters, setSemesters] = useState([]);
   const [introductieSemesters, setIntroductieSemesters] = useState([]);
   const [mainSemesters, setMainSemesters] = useState([]);
+  const [startSemesters, setStartSemesters] = useState([]);
   const [functies, setFuncties] = useState([]);
   const [rowLength, setRowLength] = useState(0);
   const containerRef = useRef();
-  const [roadmap, setRoadmap] = useState([null, null, null]);
+  const [startSelected, setStartSelected] = useState(false);
 
   useEffect(() => {
     async function loadData() {
@@ -18,10 +19,12 @@ export default function RoadmapBlock() {
       const functieResponse = await fetch("json/ad.json");
       const functieJson = await functieResponse.json();
 
+      const start = semJson.filter((s) => s.semester === "start");
       const intro = semJson.filter((s) => s.semester === "introductie");
       const main = semJson.filter((s) => s.semester === "main");
 
       setSemesters(semJson);
+      setStartSemesters(start);
       setIntroductieSemesters(intro);
       setMainSemesters(main);
       setFuncties(functieJson);
@@ -33,62 +36,82 @@ export default function RoadmapBlock() {
     loadData();
   }, []);
 
-  const handleBlockClick = (id) => {
-    const block = semesters.find((s) => s.id === id);
-    if (!block) return;
+  const handleBlockClick = (semester, id, listId) => {
+    switch (semester) {
+      case "start": {
+        if (startSemesters[0]?.class === "clickable") {
+          setStartSelected(true);
 
-    const newRoadmap = [...roadmap];
+          // update startsemester naar 'last-selected'
+          setStartSemesters((prev) =>
+            prev.map((s) => ({ ...s, class: "last-selected" }))
+          );
 
-    switch (block.semester) {
-      case "startsemester":
-        newRoadmap[0] = id;
-        newRoadmap[1] = null;
-        newRoadmap[2] = null;
+          // maak introducties clickable
+          setIntroductieSemesters((prev) =>
+            prev.map((obj) => ({ ...obj, class: "clickable" }))
+          );
+        }
         break;
-      case "introductie":
-        newRoadmap[1] = id;
-        newRoadmap[2] = null;
-        break;
-      case "main":
-        newRoadmap[2] = id;
-        break;
-      default:
-        break;
-    }
-
-    setRoadmap(newRoadmap);
-  };
-
-  const getAllFutureIds = (id, visited = new Set()) => {
-    if (visited.has(id)) return { ids: [], functies: [] };
-    visited.add(id);
-
-    const block = semesters.find((s) => s.id === id);
-    if (!block) return { ids: [], functies: [] };
-
-    let ids = [id];
-    let functies = block.functies || [];
-
-    if (block.ad) {
-      for (const next of block.ad) {
-        const result = getAllFutureIds(next, visited);
-        ids.push(...result.ids);
-        functies.push(...result.functies);
       }
+
+      case "introductie": {
+        const clicked = introductieSemesters[listId];
+        if (clicked?.class === "clickable") {
+          // zet start op 'passed'
+          setStartSemesters((prev) =>
+            prev.map((s) => ({ ...s, class: "passed" }))
+          );
+
+          // markeer huidige introductie en de rest als 'not-selected'
+          setIntroductieSemesters((prev) =>
+            prev.map((obj) =>
+              obj.id === id
+                ? { ...obj, class: "last-selected" }
+                : { ...obj, class: "not-selected" }
+            )
+          );
+
+          // maak main semesters clickable
+          setMainSemesters((prev) =>
+            prev.map((obj) => ({ ...obj, class: "clickable" }))
+          );
+        }
+        break;
+      }
+
+      case "main": {
+        const clicked = mainSemesters[listId];
+        if (clicked?.class === "clickable") {
+          // update introductie status
+          setIntroductieSemesters((prev) =>
+            prev.map((obj) =>
+              obj.class === "last-selected"
+                ? { ...obj, class: "passed" }
+                : { ...obj, class: "not-selected" }
+            )
+          );
+
+          // markeer huidige main als 'last-selected'
+          setMainSemesters((prev) =>
+            prev.map((obj) =>
+              obj.id === id
+                ? { ...obj, class: "passed" }
+                : { ...obj, class: "not-selected" }
+            )
+          );
+
+          // functies mogen clickable worden
+          setFuncties((prev) =>
+            prev.map((obj) => ({ ...obj, class: "clickable" }))
+          );
+        }
+        break;
+      }
+
+      default:
+        console.warn("Onbekend semester:", semester);
     }
-
-    return { ids: [...new Set(ids)], functies: [...new Set(functies)] };
-  };
-
-  const lastChosen = roadmap.slice().reverse().find(Boolean);
-  const { ids: futureIds, functies: futureFuncties } = lastChosen
-    ? getAllFutureIds(lastChosen)
-    : { ids: [], functies: [] };
-
-  const getClass = (id) => {
-    if (roadmap.includes(id)) return "block chosen";
-    if (futureIds.includes(id)) return "block future";
-    return "block";
   };
 
   if (!semesters.length) return <div>Loading...</div>;
@@ -99,22 +122,31 @@ export default function RoadmapBlock() {
       <div className="block grid-col-2">Jaar 2</div>
       <div className="block grid-col-1">Functie</div>
 
-      <div
-        className={`${getClass(1)} grid-col-1 grid-row-1`}
-        data-id="start"
-        onClick={() => handleBlockClick(1)}
-      >
-        Startsemester
-      </div>
+      {startSemesters[0] ? (
+        <div
+          key={`start-${0}`}
+          className={`block ${startSemesters[0].class} grid-col-1 grid-row-1 start`}
+          data-id={`start-${startSemesters[0].id}`}
+          onClick={() => {
+            handleBlockClick("start", startSemesters[0].id);
+          }}
+        >
+          {startSemesters[0].naam}
+        </div>
+      ) : (
+        <div key={`start-placeholder grid-row-1`} className="placeholder" />
+      )}
 
       <div className="intro-rij">
         {Array.from({ length: rowLength }).map((_, i) =>
           introductieSemesters[i] ? (
             <div
               key={`intro-${i}`}
-              className={getClass(introductieSemesters[i].id)}
+              className={`block ${introductieSemesters[i].class} intro`}
               data-id={`intro-${introductieSemesters[i].id}`}
-              onClick={() => handleBlockClick(introductieSemesters[i].id)}
+              onClick={() => {
+                handleBlockClick("introductie", introductieSemesters[i].id, i);
+              }}
             >
               {introductieSemesters[i].naam}
             </div>
@@ -128,10 +160,12 @@ export default function RoadmapBlock() {
         {Array.from({ length: rowLength }).map((_, i) =>
           mainSemesters[i] ? (
             <div
-              key={`main-${i}`}
-              className={getClass(mainSemesters[i].id)}
+              key={`main-${i} ${mainSemesters[i].class}`}
+              className={`block ${mainSemesters[i].class} main`}
               data-id={`main-${mainSemesters[i].id}`}
-              onClick={() => handleBlockClick(mainSemesters[i].id)}
+              onClick={() => {
+                handleBlockClick("main", mainSemesters[i].id, i);
+              }}
             >
               {mainSemesters[i].naam}
             </div>
@@ -141,11 +175,7 @@ export default function RoadmapBlock() {
         )}
       </div>
 
-      <div
-        className={`${getClass(20)} grid-col-1 grid-row-1`}
-        data-id="end"
-        onClick={() => handleBlockClick(20)}
-      >
+      <div className={`block grid-col-1 grid-row-1 afstuderen`} data-id="end">
         Afstuderen
       </div>
 
@@ -154,9 +184,7 @@ export default function RoadmapBlock() {
           functies[i] ? (
             <div
               key={`functie-${i}`}
-              className={`block col-1 ${
-                futureFuncties.includes(i + 1) ? "future" : ""
-              }`}
+              className={`block col-1 functie`}
               data-id={`functie-${i}`}
             >
               {functies[i].functie}

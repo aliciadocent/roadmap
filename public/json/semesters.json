@@ -5,7 +5,8 @@
     "locatie": ["Eindhoven", "Tilburg"],
     "ad": [2, 3, 4, 5, 6, 7, 8],
     "functies": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
-    "semester": "startsemester"
+    "semester": "start",
+    "class": "clickable"
   },
   {
     "id": 2,
@@ -13,8 +14,9 @@
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-primary",
     "ad": [9, 12, 14, 18],
-    "functies":[1, 4, 6, 8, 10],
-    "semester": "introductie"
+    "functies": [1, 4, 6, 8, 10],
+    "semester": "introductie",
+    "class": "empty"
   },
   {
     "id": 3,
@@ -22,8 +24,9 @@
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-secondary",
     "ad": [10, 11, 15, 14],
-    "functies":[2, 9, 8],
-    "semester": "introductie"
+    "functies": [2, 9, 8],
+    "semester": "introductie",
+    "class": "empty"
   },
   {
     "id": 4,
@@ -31,8 +34,9 @@
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-success",
     "ad": [10, 11, 14],
-    "functies":[2, 3, 8],
-    "semester": "introductie"
+    "functies": [2, 3, 8],
+    "semester": "introductie",
+    "class": "empty"
   },
   {
     "id": 5,
@@ -40,8 +44,9 @@
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-danger",
     "ad": [9, 14],
-    "functies":[5, 8],
-    "semester": "introductie"
+    "functies": [5, 8],
+    "semester": "introductie",
+    "class": "empty"
   },
   {
     "id": 6,
@@ -49,8 +54,9 @@
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-warning",
     "ad": [12, 14, 18],
-    "functies":[6, 10, 8],
-    "semester": "introductie"
+    "functies": [6, 10, 8],
+    "semester": "introductie",
+    "class": "empty"
   },
   {
     "id": 7,
@@ -58,8 +64,9 @@
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-info",
     "ad": [13, 14, 17],
-    "functies":[7, 11, 8],
-    "semester": "introductie"
+    "functies": [7, 11, 8],
+    "semester": "introductie",
+    "class": "empty"
   },
   {
     "id": 8,
@@ -67,24 +74,27 @@
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-dark",
     "ad": [13, 14, 8, 15, 18, 11],
-    "functies":[7, 9, 12, 3],
-    "semester": "introductie"
+    "functies": [7, 9, 12, 3],
+    "semester": "introductie",
+    "class": "empty"
   },
   {
     "id": 9,
     "naam": "Network & Cloud Automation",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-primary",
-    "functies":[5],
-    "semester": "main"
+    "functies": [5],
+    "semester": "main",
+    "class": "empty"
   },
   {
     "id": 10,
     "naam": "Media Creation",
     "locatie": ["Eindhoven"],
     "kleur": "text-bg-secondary",
-    "functies":[2],
-    "semester": "main"
+    "functies": [2],
+    "semester": "main",
+    "class": "empty"
   },
   {
     "id": 11,
@@ -92,7 +102,8 @@
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-success",
     "functies": [3],
-    "semester": "main"
+    "semester": "main",
+    "class": "empty"
   },
   {
     "id": 12,
@@ -100,7 +111,8 @@
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-warning",
     "functies": [6, 10],
-    "semester": "main"
+    "semester": "main",
+    "class": "empty"
   },
   {
     "id": 13,
@@ -113,7 +125,8 @@
         "volgende": [20]
       }
     ],
-    "semester": "main"
+    "semester": "main",
+    "class": "empty"
   },
   {
     "id": 14,
@@ -126,7 +139,8 @@
         "volgende": [20]
       }
     ],
-    "semester": "main"
+    "semester": "main",
+    "class": "empty"
   },
   {
     "id": 15,
@@ -139,7 +153,8 @@
         "volgende": [20]
       }
     ],
-    "semester": "main"
+    "semester": "main",
+    "class": "empty"
   },
   {
     "id": 17,
@@ -152,7 +167,8 @@
         "volgende": [20]
       }
     ],
-    "semester": "main"
+    "semester": "main",
+    "class": "empty"
   },
   {
     "id": 18,
@@ -169,12 +185,14 @@
         "volgende": [20]
       }
     ],
-    "semester": "main"
+    "semester": "main",
+    "class": "empty"
   },
   {
     "id": 20,
     "naam": "Afstuderen Ad",
     "locatie": ["Eindhoven", "Tilburg"],
-    "semester": "afstuderen"
+    "semester": "afstuderen",
+    "class": "empty"
   }
 ]

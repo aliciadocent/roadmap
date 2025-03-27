@@ -1,5 +1,8 @@
 :root {
-  --color-block: pink;
+  --color-block-clickable: lightgreen;
+  --clock-block-last-selected: purple;
+  --color-block-basic: lightblue;
+  --color-block-not-selected: purple;
 }
 
 #roadmapBlock {
@@ -16,22 +19,25 @@
   border-radius: 4px;
   padding: 10px;
   margin: 10px 0 0 0;
-  background-color: var(--color-block);
+  background-color: var(--color-block-basic);
 }
 
-.block.chosen {
-  background-color: #fde68a;
-  border-color: #f59e0b;
-  opacity: 1;
-}
-
-.block.future {
-  background-color: #bbf7d0;
-  border-color: #22c55e;
-  opacity: 1;
-}
-
-.block {
+.block.clickable {
   cursor: pointer;
-  transition: all 0.2s ease;
+  background-color: var(--color-block-clickable);
 }
+
+.block.last-selected {
+  background-color: var(--clock-block-last-selected);
+}
+
+.block.not-selected {
+  background-color: var(--color-block-not-selected);
+  opacity: 0.3;
+}
+
+.block.passed {
+  background-color: var(--color-block-not-selected);
+  opacity: 0.7;
+}
+
