@@ -6,10 +6,10 @@ export default function RoadmapBlock() {
   const [introductieSemesters, setIntroductieSemesters] = useState([]);
   const [mainSemesters, setMainSemesters] = useState([]);
   const [startSemesters, setStartSemesters] = useState([]);
+  const [afstuderenSemesters, setAfstuderenSemesters] = useState([]);
   const [functies, setFuncties] = useState([]);
   const [rowLength, setRowLength] = useState(0);
   const containerRef = useRef();
-  const [startSelected, setStartSelected] = useState(false);
 
   useEffect(() => {
     async function loadData() {
@@ -22,11 +22,13 @@ export default function RoadmapBlock() {
       const start = semJson.filter((s) => s.semester === "start");
       const intro = semJson.filter((s) => s.semester === "introductie");
       const main = semJson.filter((s) => s.semester === "main");
+      const afstuderen = semJson.filter((s) => s.semester === "afstuderen");
 
       setSemesters(semJson);
       setStartSemesters(start);
       setIntroductieSemesters(intro);
       setMainSemesters(main);
+      setAfstuderenSemesters(afstuderen);
       setFuncties(functieJson);
 
       const max = Math.max(intro.length, main.length, functieJson.length);
@@ -40,8 +42,6 @@ export default function RoadmapBlock() {
     switch (semester) {
       case "start": {
         if (startSemesters[0]?.class === "clickable") {
-          setStartSelected(true);
-
           // update startsemester naar 'last-selected'
           setStartSemesters((prev) =>
             prev.map((s) => ({ ...s, class: "last-selected" }))
@@ -101,9 +101,8 @@ export default function RoadmapBlock() {
             )
           );
 
-          // functies mogen clickable worden
-          setFuncties((prev) =>
-            prev.map((obj) => ({ ...obj, class: "clickable" }))
+          setAfstuderenSemesters((prev) =>
+            prev.map((s) => ({ ...s, class: "passed" }))
           );
         }
         break;
@@ -118,9 +117,9 @@ export default function RoadmapBlock() {
 
   return (
     <div className="container" id="roadmapBlock" ref={containerRef}>
-      <div className="block grid-col-2">Jaar 1</div>
-      <div className="block grid-col-2">Jaar 2</div>
-      <div className="block grid-col-1">Functie</div>
+      <div className="block grid-col-2 year">Jaar 1</div>
+      <div className="block grid-col-2 year">Jaar 2</div>
+      <div className="block grid-col-1 function">Functie</div>
 
       {startSemesters[0] ? (
         <div
@@ -175,9 +174,17 @@ export default function RoadmapBlock() {
         )}
       </div>
 
-      <div className={`block grid-col-1 grid-row-1 afstuderen`} data-id="end">
-        Afstuderen
-      </div>
+      {afstuderenSemesters[0] ? (
+        <div
+          key={`afstuderen-${0}`}
+          className={`block ${afstuderenSemesters[0].class} grid-col-1 grid-row-1 start`}
+          data-id={`afstuderen-${afstuderenSemesters[0].id}`}
+        >
+          {afstuderenSemesters[0].naam}
+        </div>
+      ) : (
+        <div key={`start-placeholder grid-row-1`} className="placeholder" />
+      )}
 
       <div className="functies-rij">
         {Array.from({ length: rowLength }).map((_, i) =>
