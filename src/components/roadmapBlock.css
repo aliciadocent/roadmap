@@ -1,91 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+/* ===== KLEUREN ===== */
 :root {
-  --color-block-clickable: #d89dd6;
-  --clock-block-last-selected: #8a558a;
-  --clock-block-passed: #8a558a;
   --color-block-basic: #b078af;
+  --color-block-clickable: #d89dd6;
+  --color-block-last-selected: #8a558a;
+  --color-block-passed: #8a558a;
   --color-block-not-selected: #b078af;
+
   --color-title-year: #636;
   --color-title-function: #007e7b;
   --color-functies: #51b3af;
 }
 
+/* ===== CONTAINER ===== */
 #roadmapBlock {
   width: 100%;
   padding: 0 10px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px;
-  font-family: "Open Sans", sans-serif;
 }
 
+/* ===== BLOKKEN ALGEMEEN ===== */
 .block {
   border: 2px solid var(--color-title-year);
   border-radius: 7px;
   padding: 10px;
-  margin: 10px 0 0 0;
+  margin-top: 10px;
   background-color: var(--color-block-basic);
   font-size: 0.8rem;
   opacity: 0.4;
   transition: all 0.2s;
 }
 
+/* Klikbaar blok */
 .block.clickable {
   cursor: pointer;
   background-color: var(--color-block-clickable);
   opacity: 1;
 }
 
+/* Actief geselecteerd blok */
 .block.last-selected {
-  background-color: var(--clock-block-last-selected);
+  background-color: var(--color-block-last-selected);
   opacity: 1;
   color: #fff;
 }
 
+/* Vorige keuze */
+.block.passed {
+  background-color: var(--color-block-passed);
+  opacity: 1;
+  color: #fff;
+}
+
+/* Niet-geselecteerde opties */
 .block.not-selected {
   background-color: var(--color-block-not-selected);
   opacity: 0.3;
 }
 
-.block.passed {
-  background-color: var(--clock-block-passed);
+/* ===== TITELS (jaar, functie) ===== */
+.block.year,
+.block.function {
+  background-color: transparent;
+  border-radius: 20px 20px 0 0;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  text-align: center;
+  padding: 2px 0;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1rem;
   opacity: 1;
-  color: #fff;
 }
 
 .block.year {
-  background-color: inherit;
-  border: 3px solid var(--color-title-year);
-  border-radius: 20px 20px 0 0;
-  border-bottom: none;
-  text-align: center;
-  padding: 2px 0;
-  margin: 10px 0 0 0;
+  border-color: var(--color-title-year);
   color: var(--color-title-year);
-  font-weight: bold;
-  font-size:1.0rem;
-  opacity: 1;
 }
 
 .block.function {
-  background-color: inherit;
-  border: 3px solid var(--color-title-function);
-  border-radius: 20px 20px 0 0;
-  border-bottom: none;
-  text-align: center;
-  padding: 2px 0;
-  margin: 10px 0 0 0;
+  border-color: var(--color-title-function);
   color: var(--color-title-function);
-  font-weight: bold;
-  font-size:1.0rem;
-  opacity: 1;
 }
 
+/* ===== FUNCTIE BLOKKEN ===== */
 .functies-rij .block {
   border-color: var(--color-title-function);
   background-color: var(--color-functies);
 }
+
 .functies-rij .block.passed {
   background-color: var(--color-functies);
+}
+
+.reset-button {
+  margin: 10px 0 20px 0;
+  padding: 8px 16px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  border: none;
+  background-color: #d89dd6;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.reset-button:hover {
+  background-color: #c26fc2;
 }

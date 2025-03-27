@@ -3,14 +3,15 @@ import "./roadmapBlock.css";
 
 export default function RoadmapBlock() {
   const [semesters, setSemesters] = useState([]);
+  const [startSemesters, setStartSemesters] = useState([]);
   const [introductieSemesters, setIntroductieSemesters] = useState([]);
   const [mainSemesters, setMainSemesters] = useState([]);
-  const [startSemesters, setStartSemesters] = useState([]);
   const [afstuderenSemesters, setAfstuderenSemesters] = useState([]);
   const [functies, setFuncties] = useState([]);
   const [rowLength, setRowLength] = useState(0);
   const containerRef = useRef();
 
+  // Data laden uit JSON bestanden
   useEffect(() => {
     async function loadData() {
       const semestersResponse = await fetch("json/semesters.json");
@@ -19,6 +20,7 @@ export default function RoadmapBlock() {
       const functieResponse = await fetch("json/ad.json");
       const functieJson = await functieResponse.json();
 
+      // Groepeer semesters op type
       const start = semJson.filter((s) => s.semester === "start");
       const intro = semJson.filter((s) => s.semester === "introductie");
       const main = semJson.filter((s) => s.semester === "main");
@@ -38,52 +40,47 @@ export default function RoadmapBlock() {
     loadData();
   }, []);
 
+  // Helper functie om klassen van een lijst bij te werken
+  const updateClasses = (list, setter, conditionFn) => {
+    setter(
+      list.map((item) => ({
+        ...item,
+        class: conditionFn(item),
+      }))
+    );
+  };
+
+  // Afhandelen van klikken op een blok
   const handleBlockClick = (semester, id, listId) => {
     switch (semester) {
       case "start": {
         if (startSemesters[0]?.class === "clickable") {
-          // update startsemester naar 'last-selected'
-          setStartSemesters((prev) =>
-            prev.map((s) => ({ ...s, class: "last-selected" }))
+          updateClasses(
+            startSemesters,
+            setStartSemesters,
+            () => "last-selected"
           );
-
-          // maak introducties clickable
-          setIntroductieSemesters((prev) =>
-            prev.map((obj) => ({ ...obj, class: "clickable" }))
+          updateClasses(
+            introductieSemesters,
+            setIntroductieSemesters,
+            () => "clickable"
           );
         }
         break;
       }
 
       case "introductie": {
-        console.log(id);
         const clicked = introductieSemesters[listId];
         if (clicked?.class === "clickable") {
-          // zet start op 'passed'
-          setStartSemesters((prev) =>
-            prev.map((s) => ({ ...s, class: "passed" }))
+          updateClasses(startSemesters, setStartSemesters, () => "passed");
+
+          updateClasses(introductieSemesters, setIntroductieSemesters, (obj) =>
+            obj.id === id ? "last-selected" : "not-selected"
           );
 
-          // markeer huidige introductie en de rest als 'not-selected'
-          setIntroductieSemesters((prev) =>
-            prev.map((obj) =>
-              obj.id === id
-                ? { ...obj, class: "last-selected" }
-                : { ...obj, class: "not-selected" }
-            )
-          );
-
-          // Stap 1: Vind het geklikte introductie-object
-          const clickedIntro = introductieSemesters.find((s) => s.id === id);
-          // Stap 2: Haal de juiste "ad"-ids op uit het JSON-object
-          const allowedMainIds = clickedIntro?.ad || [];
-          // Stap 3: Zet alleen die mainSemesters clickable
-          setMainSemesters((prev) =>
-            prev.map((obj) =>
-              allowedMainIds.includes(obj.id)
-                ? { ...obj, class: "clickable" }
-                : { ...obj, class: "not-selected" }
-            )
+          const allowedMainIds = clicked?.ad || [];
+          updateClasses(mainSemesters, setMainSemesters, (obj) =>
+            allowedMainIds.includes(obj.id) ? "clickable" : "not-selected"
           );
         }
         break;
@@ -92,47 +89,47 @@ export default function RoadmapBlock() {
       case "main": {
         const clicked = mainSemesters[listId];
         if (clicked?.class === "clickable") {
-          // update introductie status
+          // Zet de introductie met class 'last-selected' op 'passed'
           setIntroductieSemesters((prev) =>
             prev.map((obj) =>
-              obj.class === "last-selected"
-                ? { ...obj, class: "passed" }
-                : { ...obj, class: "not-selected" }
+              obj.class === "last-selected" ? { ...obj, class: "passed" } : obj
             )
           );
 
-          // markeer huidige main als 'last-selected'
+          // Zet alle main semesters op 'not-selected', behalve degene die je kiest
           setMainSemesters((prev) =>
             prev.map((obj) =>
               obj.id === id
-                ? { ...obj, class: "passed" }
+                ? { ...obj, class: "last-selected" }
                 : { ...obj, class: "not-selected" }
             )
           );
 
+          // ✅ Afstuderen mag nu ook groen worden
           setAfstuderenSemesters((prev) =>
             prev.map((s) => ({ ...s, class: "passed" }))
           );
 
+          // Functies bepalen op basis van gekozen introductie en main semester
           const introChoiceObj = introductieSemesters.find(
             (s) => s.class === "passed" || s.class === "last-selected"
           );
           const introChoice = introChoiceObj?.id;
+
           const mainChoice = id;
 
           const allowedFunctieIds = functies
             .map((f, index) => {
-              // Je functie uit ad.json
               if (
                 f.semester_2?.includes(introChoice) &&
                 f.semester_3 === mainChoice
               ) {
-                return index + 1; // of f.id als je die hebt
+                return index + 1;
               }
               return null;
             })
             .filter((id) => id !== null);
-          // stap 3: Zet alleen die functies op 'passed'
+
           setFuncties((prev) =>
             prev.map((obj, index) =>
               allowedFunctieIds.includes(index + 1)
@@ -162,52 +159,38 @@ export default function RoadmapBlock() {
           key={`start-${0}`}
           className={`block ${startSemesters[0].class} grid-col-1 grid-row-1 start`}
           data-id={`start-${startSemesters[0].id}`}
-          onClick={() => {
-            handleBlockClick("start", startSemesters[0].id);
-          }}
+          onClick={() => handleBlockClick("start", startSemesters[0].id)}
         >
           {startSemesters[0].naam}
         </div>
       ) : (
-        <div key={`start-placeholder grid-row-1`} className="placeholder" />
+        <div key={`start-placeholder`} className="placeholder grid-row-1" />
       )}
 
       <div className="intro-rij">
-        {Array.from({ length: rowLength }).map((_, i) =>
-          introductieSemesters[i] ? (
-            <div
-              key={`intro-${i}`}
-              className={`block ${introductieSemesters[i].class} intro`}
-              data-id={`intro-${introductieSemesters[i].id}`}
-              onClick={() => {
-                handleBlockClick("introductie", introductieSemesters[i].id, i);
-              }}
-            >
-              {introductieSemesters[i].naam}
-            </div>
-          ) : (
-            <div key={`intro-placeholder-${i}`} className="placeholder" />
-          )
-        )}
+        {introductieSemesters.map((s, i) => (
+          <div
+            key={`intro-${i}`}
+            className={`block ${s.class} intro`}
+            data-id={`intro-${s.id}`}
+            onClick={() => handleBlockClick("introductie", s.id, i)}
+          >
+            {s.naam}
+          </div>
+        ))}
       </div>
 
       <div className="main-rij">
-        {Array.from({ length: rowLength }).map((_, i) =>
-          mainSemesters[i] ? (
-            <div
-              key={`main-${i} ${mainSemesters[i].class}`}
-              className={`block ${mainSemesters[i].class} main`}
-              data-id={`main-${mainSemesters[i].id}`}
-              onClick={() => {
-                handleBlockClick("main", mainSemesters[i].id, i);
-              }}
-            >
-              {mainSemesters[i].naam}
-            </div>
-          ) : (
-            <div key={`main-placeholder-${i}`} className="placeholder" />
-          )
-        )}
+        {mainSemesters.map((s, i) => (
+          <div
+            key={`main-${i}`}
+            className={`block ${s.class} main`}
+            data-id={`main-${s.id}`}
+            onClick={() => handleBlockClick("main", s.id, i)}
+          >
+            {s.naam}
+          </div>
+        ))}
       </div>
 
       {afstuderenSemesters[0] ? (
@@ -219,23 +202,22 @@ export default function RoadmapBlock() {
           {afstuderenSemesters[0].naam}
         </div>
       ) : (
-        <div key={`start-placeholder grid-row-1`} className="placeholder" />
+        <div
+          key={`afstuderen-placeholder`}
+          className="placeholder grid-row-1"
+        />
       )}
 
       <div className="functies-rij">
-        {Array.from({ length: rowLength }).map((_, i) =>
-          functies[i] ? (
-            <div
-              key={`functie-${i}`}
-              className={`block col-1 functie ${functies[i].class}`}
-              data-id={`functie-${i}`}
-            >
-              {functies[i].functie}
-            </div>
-          ) : (
-            <div key={`functie-placeholder-${i}`} className="placeholder" />
-          )
-        )}
+        {functies.map((f, i) => (
+          <div
+            key={`functie-${i}`}
+            className={`block col-1 functie ${f.class}`}
+            data-id={`functie-${i}`}
+          >
+            {f.functie}
+          </div>
+        ))}
       </div>
     </div>
   );

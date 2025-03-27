@@ -119,12 +119,7 @@
     "naam": "Intelligent Devices",
     "locatie": ["Eindhoven", "Tilburg"],
     "kleur": "text-bg-info",
-    "ad": [
-      {
-        "functie": "Junior Embedded Software Developer",
-        "volgende": [20]
-      }
-    ],
+    "functies": [20],
     "semester": "main",
     "class": "empty"
   },
