@@ -27,9 +27,9 @@
   padding: 10px;
   margin-top: 10px;
   background-color: var(--color-block-basic);
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   opacity: 0.4;
-  transition: all 0.2s;
+  transition: all 0.4s;
 }
 
 /* Klikbaar blok */
