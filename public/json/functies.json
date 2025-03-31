@@ -1,0 +1,67 @@
+[
+    {
+      "id": 1,
+      "naam": "Assistant Service Delivery Manager",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 2,
+      "naam": "Digital Media Operator",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 3,
+      "naam": "Junior App Developer",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 4,
+      "naam": "Junior Application Manager",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 5,
+      "naam": "Junior Cloud Engineer",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 6,
+      "naam": "Junior Data & BI Analist",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 7,
+      "naam": "Junior Embedded Software Developer",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 8,
+      "naam": "Junior Ethical Hacker (Pentester)",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 9,
+      "naam": "Junior Front End Developer",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 10,
+      "naam": "Prompt Engineer",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 11,
+      "naam": "Smart Industry System Operator",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 12,
+      "naam": "Software Prompt (AI Integration) Engineer",
+      "url": "https://www.fontys.nl"
+    },
+    {
+      "id": 13,
+      "naam": "Wild Card",
+      "url": "https://www.fontys.nl"
+    }
+  ]

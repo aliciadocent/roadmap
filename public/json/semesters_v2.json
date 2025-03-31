@@ -1,0 +1,173 @@
+[
+  {
+    "id": 1,
+    "naam": "Startsemester",
+    "type": "Start",
+    "semester": ["S1"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 2,
+    "naam": "Interactive Media",
+    "type": "Introductie",
+    "semester": ["S2"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 3,
+    "naam": "Game Development",
+    "type": "Introductie",
+    "semester": ["S2"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 4,
+    "naam": "Business IT & Data Analysis",
+    "type": "Introductie",
+    "semester": ["S2"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 5,
+    "naam": "Network & Cloud Basics",
+    "type": "Introductie",
+    "semester": ["S2"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 6,
+    "naam": "AI Basics",
+    "type": "Introductie",
+    "semester": ["S2"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 7,
+    "naam": "Intelligent Technologies",
+    "type": "Introductie",
+    "semester": ["S2"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 8,
+    "naam": "Software Design & Engineering",
+    "type": "Introductie",
+    "semester": ["S2"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 10,
+    "naam": "Media Creation",
+    "type": "Main",
+    "semester": ["S3", "S4"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 11,
+    "naam": "Mobile Apps Development",
+    "type": "Main",
+    "semester": ["S3", "S4"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 12,
+    "naam": "Cyber Security Essentials",
+    "type": "Main",
+    "semester": ["S3", "S4"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 13,
+    "naam": "Front End Development",
+    "type": "Main",
+    "semester": ["S3", "S4"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 14,
+    "naam": "Network & Cloud Automation",
+    "type": "Main",
+    "semester": ["S3", "S4"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 15,
+    "naam": "Business IT & Data Analysis",
+    "type": "Main",
+    "semester": ["S3", "S4"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 16,
+    "naam": "Intelligent Devices",
+    "type": "Main",
+    "semester": ["S3", "S4"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 17,
+    "naam": "Industry 4.0 & Internet of Things",
+    "type": "Main",
+    "semester": ["S3", "S4"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 18,
+    "naam": "Applied Generative AI",
+    "type": "Main",
+    "semester": ["S3", "S4"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 30,
+    "naam": "Afstuderen Associate degree",
+    "type": "Afstuderen",
+    "semester": ["S4"],
+    "niveau": ["AD"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 31,
+    "naam": "Afstuderen Bachelor",
+    "type": "Afstuderen",
+    "semester": ["S8"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  }
+]

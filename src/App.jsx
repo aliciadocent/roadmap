@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import RoadmapBlock from "./components/roadmapBlock";
+//import RoadmapBlock from "./components/roadmapBlock";
+import RoadmapBlockAd from "./components/roadmapBlockAd";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,7 +12,7 @@ function App() {
         <div className="container">
           <h1>Roadmap studenten Associate degree</h1>
         </div>
-        <RoadmapBlock />
+        <RoadmapBlockAd />
       </div>
     </>
   );

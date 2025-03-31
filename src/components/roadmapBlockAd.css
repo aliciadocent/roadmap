@@ -1,0 +1,120 @@
+:root {
+  --color-block-basic: #b078af;
+  --color-block-clickable: #d89dd6;
+  --color-block-last-selected: #8a558a;
+  --color-block-passed: #8a558a;
+  --color-block-not-selected: #b078af;
+
+  --color-title-year: #636;
+  --color-title-function: #007e7b;
+  --color-functies: #51b3af;
+}
+
+#roadmap {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  width: inherit;
+}
+
+.title.year {
+  grid-column: 2 span;
+  border-color: var(--color-title-year);
+  color: var(--color-title-year);
+}
+.title.function {
+  grid-column: 1 span;
+  border-color: var(--color-title-function);
+  color: var(--color-title-function);
+}
+.title.year,
+.title.function {
+  background-color: transparent;
+  border-radius: 20px 20px 0 0;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  text-align: center;
+  padding: 2px 0;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  opacity: 1;
+}
+
+.column {
+  grid-column: 1 span;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-content: flex-start;
+}
+.block {
+  border: 2px solid var(--color-title-year);
+  border-radius: 7px;
+  background-color: var(--color-block-basic);
+  width: 100%;
+  margin: 3px 0;
+  padding: 10px 3px;
+  text-align: center;
+  align-self: center;
+  opacity: 0.4;
+  transition: all 0.2s;
+}
+
+#afstuderen .block,
+#start .block {
+  height: calc(100% - 5px);
+}
+
+/* statussen */
+.block.clickable {
+  cursor: pointer;
+  background-color: var(--color-block-clickable);
+  opacity: 1;
+}
+
+.column:has(.block.clickable) {
+  animation: 0.5s clickable 5;
+}
+.column:has(.block.clickable):hover {
+  animation: none;
+  cursor: pointer;
+  transition: margin 0.2s ease-out;
+}
+
+.block.clicked {
+  background-color: var(--color-block-last-selected);
+  opacity: 1;
+  color: #fff;
+}
+.block.not-clicked-choice {
+    opacity: 0.8;
+}
+.block.passed-clicked {
+  background-color: var(--color-block-passed);
+  opacity: 1;
+  color: #fff;
+}
+
+/* ===== FUNCTIE BLOKKEN ===== */
+.functie.block {
+  border-color: var(--color-title-function);
+  background-color: var(--color-functies);
+}
+
+.functie.block.chosen {
+    opacity: 1;
+}
+
+@keyframes clickable {
+  0% {
+    margin-top: 0px;
+  }
+  50% {
+    margin-top: 15px;
+  }
+  to {
+    margin-top: 0px;
+  }
+}

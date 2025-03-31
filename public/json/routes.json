@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "niveau": "AD",
+        "semesters": [1, 2, 10, 30],
+        "functie": 2
+    },
+    {
+        "id": 2,
+        "niveau": "AD",
+        "semesters": [1, 2, 11, 30],
+        "functie": 3
+    },
+    {
+        "id": 3,
+        "niveau": "AD",
+        "semesters": [1, 2, 12, 30],
+        "functie": 8
+    },
+    {
+        "id": 4,
+        "niveau": "AD",
+        "semesters": [1, 2, 13, 30],
+        "functie": 9
+    }
+]
