@@ -72,8 +72,10 @@ export default function RoadmapBlockAd() {
 
     const nieuweSemesters = alleSemesters.map((s) => {
       const isClicked = s.id === id;
-      const isPrevious = clickedPath[s.type] === s.id;
+      const isPrevious = clickedPath[s.type] === s.id && s.type !== type;
       const isSameType = s.type === type;
+      const isNotClickedChoice = s.id !== id && (s.class === "clickable" || s.class === "clicked");
+      const isPassedNotClicked = s.class === "not-clicked-choice" || s.class === "passed-not-clicked";
       const isNextColumn =
         Object.keys(mogelijkeIdsPerType).indexOf(s.type) ===
         Object.keys(mogelijkeIdsPerType).indexOf(type) + 1;
@@ -84,11 +86,13 @@ export default function RoadmapBlockAd() {
         nieuweClass = "clicked";
       } else if (isPrevious) {
         nieuweClass = "passed-clicked";
-      } else if (isSameType) {
-        nieuweClass = mogelijkeIdsPerType[s.type].has(s.id)
-          ? "not-clicked-choice"
-          : "not-clicked";
-      } else if (isNextColumn) {
+        console.log(s.naam);
+      } else if (isNotClickedChoice) {
+        nieuweClass = "not-clicked-choice";
+      } else if (isPassedNotClicked) {
+        nieuweClass = "passed-not-clicked";
+      }
+      else if (isNextColumn) {
         nieuweClass = mogelijkeIdsPerType[s.type].has(s.id)
           ? "clickable"
           : "not-clickable";

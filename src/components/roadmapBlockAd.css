@@ -90,12 +90,16 @@
   color: #fff;
 }
 .block.not-clicked-choice {
-    opacity: 0.8;
+    opacity: 0.85;
+    cursor: pointer;
 }
 .block.passed-clicked {
   background-color: var(--color-block-passed);
   opacity: 1;
   color: #fff;
+}
+.block.passed-not-clicked {
+  opacity: 0.7;
 }
 
 /* ===== FUNCTIE BLOKKEN ===== */
