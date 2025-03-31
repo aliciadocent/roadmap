@@ -76,7 +76,7 @@
     "naam": "Media Creation",
     "type": "Main",
     "semester": ["S3", "S4"],
-    "niveau": ["BA"],
+    "niveau": ["AD", "BA"],
     "locatie": ["Eindhoven"],
     "url": "https://www.nu.nl"
   },
@@ -146,6 +146,15 @@
   {
     "id": 18,
     "naam": "Applied Generative AI",
+    "type": "Main",
+    "semester": ["S3", "S4"],
+    "niveau": ["AD", "BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 19,
+    "naam": "Full Stack Development",
     "type": "Main",
     "semester": ["S3", "S4"],
     "niveau": ["AD", "BA"],

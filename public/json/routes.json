@@ -3,24 +3,231 @@
         "id": 1,
         "niveau": "AD",
         "semesters": [1, 2, 10, 30],
-        "functie": 2
+        "functie": 2,
+        "beschrijving": "interactive media, media creation, digital media operator"
     },
     {
         "id": 2,
         "niveau": "AD",
         "semesters": [1, 2, 11, 30],
-        "functie": 3
+        "functie": 3,
+        "beschrijving": "interactive media, mobile, junior app developer"
     },
     {
         "id": 3,
         "niveau": "AD",
         "semesters": [1, 2, 12, 30],
-        "functie": 8
+        "functie": 8,
+        "beschrijving": "interactive media, cyber, junior ethical hacker"
     },
     {
         "id": 4,
         "niveau": "AD",
         "semesters": [1, 2, 13, 30],
-        "functie": 9
+        "functie": 9,
+        "beschrijving":"interactive media, front end, front end"
+    },
+    {
+        "id": 5,
+        "niveau": "AD",
+        "semesters": [1, 4, 14, 30],
+        "functie": 1,
+        "beschrijving": "business, network, service delivery manager"
+    },
+    {
+        "id": 6,
+        "niveau": "AD",
+        "semesters": [1, 3, 10, 30],
+        "functie": 2,
+        "beschrijving": "game development, media creation, digital media operator"
+    },
+    {
+        "id": 7,
+        "niveau": "AD",
+        "semesters": [1, 8, 11, 30],
+        "functie": 3,
+        "beschrijving": "software, mobile apps, junior app developer"
+    },
+    {
+        "id": 8,
+        "niveau": "AD",
+        "semesters": [1, 3, 11, 30],
+        "functie": 4,
+        "beschrijving": "game design, mobile apps, junior app developer"
+    },
+    {
+        "id": 9,
+        "niveau": "AD",
+        "semesters": [1, 4, 15, 30],
+        "functie": 4,
+        "beschrijving": "business, business, junior app manager"
+    },
+    {
+        "id": 10,
+        "niveau": "AD",
+        "semesters": [1, 5, 14, 30],
+        "functie": 5,
+        "beschrijving": "network, network, junior cloud engineer"
+    },
+    {
+        "id": 11,
+        "niveau": "AD",
+        "semesters": [1, 2, 15, 30],
+        "functie": 6,
+        "beschrijving": "interactive media, business, data & bi"
+    },
+    {
+        "id": 12,
+        "niveau": "AD",
+        "semesters": [1, 3, 15, 30],
+        "functie": 6,
+        "beschrijving": "game dev, business, data & bi"
+    },
+    {
+        "id": 13,
+        "niveau": "AD",
+        "semesters": [1, 4, 15, 30],
+        "functie": 6,
+        "beschrijving": "business, business, data & bi"
+    },
+    {
+        "id": 14,
+        "niveau": "AD",
+        "semesters": [1, 5, 15, 30],
+        "functie": 6,
+        "beschrijving": "network, business, data & bi"
+    },
+    {
+        "id": 15,
+        "niveau": "AD",
+        "semesters": [1, 6, 15, 30],
+        "functie": 6,
+        "beschrijving": "ai, business, data & bi"
+    },
+    {
+        "id": 16,
+        "niveau": "AD",
+        "semesters": [1, 7, 15, 30],
+        "functie": 6,
+        "beschrijving": "tech, business, data & bi"
+    },
+    {
+        "id": 17,
+        "niveau": "AD",
+        "semesters": [1, 8, 15, 30],
+        "functie": 6,
+        "beschrijving": "software, business, data & bi"
+    },
+    {
+        "id": 18,
+        "niveau": "AD",
+        "semesters": [1, 7, 16, 30],
+        "functie": 7,
+        "beschrijving": "tech, intelligent devices, junior embedded software engineer"
+    },
+    {
+        "id": 18,
+        "niveau": "AD",
+        "semesters": [1, 8, 16, 30],
+        "functie": 7,
+        "beschrijving": "software, intelligent devices, junior embedded software engineer"
+    },
+    {
+        "id": 19,
+        "niveau": "AD",
+        "semesters": [1, 3, 12, 30],
+        "functie": 8,
+        "beschrijving": "game dev, cybersecurity, junior ethical hacker"
+    },
+    {
+        "id": 19,
+        "niveau": "AD",
+        "semesters": [1, 4, 12, 30],
+        "functie": 8,
+        "beschrijving": "business, cybersecurity, junior ethical hacker"
+    },
+    {
+        "id": 20,
+        "niveau": "AD",
+        "semesters": [1, 5, 12, 30],
+        "functie": 8,
+        "beschrijving": "network, cybersecurity, junior ethical hacker"
+    },
+    {
+        "id": 21,
+        "niveau": "AD",
+        "semesters": [1, 6, 12, 30],
+        "functie": 8,
+        "beschrijving": "ai, cybersecurity, junior ethical hacker"
+    },
+    {
+        "id": 19,
+        "niveau": "AD",
+        "semesters": [1, 7, 12, 30],
+        "functie": 8,
+        "beschrijving": "intelligent tech, cybersecurity, junior ethical hacker"
+    },
+    {
+        "id": 20,
+        "niveau": "AD",
+        "semesters": [1, 8, 12, 30],
+        "functie": 8,
+        "beschrijving": "software, cybersecurity, junior ethical hacker"
+    },
+    {
+        "id": 21,
+        "niveau": "AD",
+        "semesters": [1, 8, 13, 30],
+        "functie": 9,
+        "beschrijving":"software, front end, front end"
+    },
+    {
+        "id": 22,
+        "niveau": "AD",
+        "semesters": [1, 6, 18, 30],
+        "functie": 10,
+        "beschrijving":"ai basics, applied generative ai, prompt engineer"
+    },
+    {
+        "id": 23,
+        "niveau": "AD",
+        "semesters": [1, 4, 18, 30],
+        "functie": 10,
+        "beschrijving":"business, applied generative ai, prompt engineer"
+    },
+    {
+        "id": 24,
+        "niveau": "AD",
+        "semesters": [1, 7, 17, 30],
+        "functie": 11,
+        "beschrijving":"tech, internet of things, smart industry"
+    },
+    {
+        "id": 25,
+        "niveau": "AD",
+        "semesters": [1, 8, 18, 30],
+        "functie": 12,
+        "beschrijving":"software, applied generative ai, software prompt engineer"
+    },
+    {
+        "id": 26,
+        "niveau": "AD",
+        "semesters": [1, 6, 19, 30],
+        "functie": 13,
+        "beschrijving":"ai basics, full stack development, junior full stack developer"
+    },
+    {
+        "id": 27,
+        "niveau": "AD",
+        "semesters": [1, 2, 19, 30],
+        "functie": 13,
+        "beschrijving":"interactive media, full stack development, junior full stack developer"
+    },
+    {
+        "id": 28,
+        "niveau": "AD",
+        "semesters": [1, 8, 19, 30],
+        "functie": 13,
+        "beschrijving":"software, full stack development, junior full stack developer"
     }
 ]
