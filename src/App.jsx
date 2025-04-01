@@ -1,20 +1,38 @@
 import { useState } from "react";
 import "./App.css";
-//import RoadmapBlock from "./components/roadmapBlock";
 import RoadmapBlockAd from "./components/roadmapBlockAd";
+import RoadmapBlockAdBackwards from "./components/roadmapBlockAdBackwards";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [activeTab, setActiveTab] = useState("achteruit");
 
   return (
-    <>
-      <div>
-        <div className="container">
-          <h1>Roadmap studenten Associate degree</h1>
-        </div>
-        <RoadmapBlockAd />
+    <div className="container">
+      <h1>Roadmap studenten Associate degree</h1>
+
+      <div className="tabs">
+        <button
+          className={activeTab === "achteruit" ? "tab active" : "tab"}
+          onClick={() => setActiveTab("achteruit")}
+        >
+          Vanuit functie
+        </button>
+        <button
+          className={activeTab === "vooruit" ? "tab active" : "tab"}
+          onClick={() => setActiveTab("vooruit")}
+        >
+          Vanuit semesters
+        </button>
       </div>
-    </>
+
+      <div className="tab-content">
+        {activeTab === "vooruit" ? (
+          <RoadmapBlockAd />
+        ) : (
+          <RoadmapBlockAdBackwards />
+        )}
+      </div>
+    </div>
   );
 }
 

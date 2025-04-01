@@ -32,11 +32,11 @@ export default function RoadmapBlockAd() {
     if (
       alleSemesters.find(
         (s) =>
-          s.id === id && (s.class === "clickable" || s.class === "not-clicked-choice")
+          s.id === id &&
+          (s.class === "clickable" || s.class === "not-clicked-choice")
       )
     ) {
-    }
-    else {
+    } else {
       return;
     }
 
@@ -74,8 +74,10 @@ export default function RoadmapBlockAd() {
       const isClicked = s.id === id;
       const isPrevious = clickedPath[s.type] === s.id && s.type !== type;
       const isSameType = s.type === type;
-      const isNotClickedChoice = s.id !== id && (s.class === "clickable" || s.class === "clicked");
-      const isPassedNotClicked = s.class === "not-clicked-choice" || s.class === "passed-not-clicked";
+      const isNotClickedChoice =
+        s.id !== id && (s.class === "clickable" || s.class === "clicked");
+      const isPassedNotClicked =
+        s.class === "not-clicked-choice" || s.class === "passed-not-clicked";
       const isNextColumn =
         Object.keys(mogelijkeIdsPerType).indexOf(s.type) ===
         Object.keys(mogelijkeIdsPerType).indexOf(type) + 1;
@@ -91,8 +93,7 @@ export default function RoadmapBlockAd() {
         nieuweClass = "not-clicked-choice";
       } else if (isPassedNotClicked) {
         nieuweClass = "passed-not-clicked";
-      }
-      else if (isNextColumn) {
+      } else if (isNextColumn) {
         nieuweClass = mogelijkeIdsPerType[s.type].has(s.id)
           ? "clickable"
           : "not-clickable";
@@ -123,76 +124,94 @@ export default function RoadmapBlockAd() {
     }
   }
 
+  function handleReset() {
+    setClickedPath({});
+    setFuncties((prev) => prev.map((f) => ({ ...f, class: "" })));
+    setAlleSemesters((prev) =>
+      prev.map((s) => ({
+        ...s,
+        class: s.id === 1 ? "clickable" : "",
+      }))
+    );
+  }
+
   if (!alleSemesters.length) return <div>Laden...</div>;
 
   return (
-    <div className="container" id="roadmap">
-      <div className="title year">Jaar 1</div>
-      <div className="title year">Jaar 2</div>
-      <div className="title function">Functie</div>
+    <div>
+      <div className="roadmap-header">
+        <button className="reset-button" onClick={handleReset}>
+          Reset
+        </button>
+      </div>
+      <div className="container" id="roadmap">
+        <div className="title year">Jaar 1</div>
+        <div className="title year">Jaar 2</div>
+        <div className="title function">Functie</div>
 
-      <div className="column" id="start">
-        {alleSemesters
-          .filter((s) => s.type === "Start")
-          .map((s) => (
-            <div
-              key={`semester-${s.id}`}
-              className={`block start ${s.class}`}
-              onClick={() => handleSemesterFunctieClick("Start", s.id)}
-            >
-              {s.naam}
+        <div className="column" id="start">
+          {alleSemesters
+            .filter((s) => s.type === "Start")
+            .map((s) => (
+              <div
+                key={`semester-${s.id}`}
+                className={`block start ${s.class}`}
+                onClick={() => handleSemesterFunctieClick("Start", s.id)}
+              >
+                {s.naam}
+              </div>
+            ))}
+        </div>
+
+        <div className="column" id="introductie">
+          {alleSemesters
+            .filter((s) => s.type === "Introductie")
+            .map((s) => (
+              <div
+                key={`semester-${s.id}`}
+                className={`block introductie ${s.class}`}
+                onClick={() => handleSemesterFunctieClick("Introductie", s.id)}
+              >
+                {s.naam}
+              </div>
+            ))}
+        </div>
+
+        <div className="column" id="main">
+          {alleSemesters
+            .filter((s) => s.type === "Main")
+            .map((s) => (
+              <div
+                key={`semester-${s.id}`}
+                className={`block main ${s.class}`}
+                onClick={() => handleSemesterFunctieClick("Main", s.id)}
+              >
+                {s.naam}
+              </div>
+            ))}
+        </div>
+
+        <div className="column" id="afstuderen">
+          {alleSemesters
+            .filter((s) => s.type === "Afstuderen")
+            .map((s) => (
+              <div
+                key={`semester-${s.id}`}
+                className={`block afstuderen ${s.class}`}
+                onClick={() => handleSemesterFunctieClick("Afstuderen", s.id)}
+              >
+                {s.naam}
+              </div>
+            ))}
+        </div>
+
+        <div className="column" id="functies">
+          {functies.map((f) => (
+            <div key={`functie-${f.id}`} className={`block functie ${f.class}`}>
+              {f.naam}
             </div>
           ))}
-      </div>
-
-      <div className="column" id="introductie">
-        {alleSemesters
-          .filter((s) => s.type === "Introductie")
-          .map((s) => (
-            <div
-              key={`semester-${s.id}`}
-              className={`block introductie ${s.class}`}
-              onClick={() => handleSemesterFunctieClick("Introductie", s.id)}
-            >
-              {s.naam}
-            </div>
-          ))}
-      </div>
-
-      <div className="column" id="main">
-        {alleSemesters
-          .filter((s) => s.type === "Main")
-          .map((s) => (
-            <div
-              key={`semester-${s.id}`}
-              className={`block main ${s.class}`}
-              onClick={() => handleSemesterFunctieClick("Main", s.id)}
-            >
-              {s.naam}
-            </div>
-          ))}
-      </div>
-
-      <div className="column" id="afstuderen">
-        {alleSemesters
-          .filter((s) => s.type === "Afstuderen")
-          .map((s) => (
-            <div
-              key={`semester-${s.id}`}
-              className={`block afstuderen ${s.class}`}
-              onClick={() => handleSemesterFunctieClick("Afstuderen", s.id)}
-            >
-              {s.naam}
-            </div>
-          ))}
-      </div>
-
-      <div className="column" id="functies">
-        {functies.map((f) => (
-          <div key={`functie-${f.id}`} className={`block functie ${f.class}`}>
-            {f.naam}
-          </div>
-        ))}
+        </div>
       </div>
     </div>
   );
