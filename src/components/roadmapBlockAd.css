@@ -89,6 +89,18 @@
   opacity: 1;
   color: #fff;
 }
+.block.clicked-function {
+  background-color: var(--color-block-last-selected);
+  opacity: 1;
+  color: #fff;
+  cursor: pointer;
+}
+.block.not-clicked-function {
+  background-color: var(--color-block-last-selected);
+  opacity: 0.55;
+  color: #fff;
+  cursor: pointer;
+}
 .block.not-clicked-choice {
     opacity: 0.85;
     cursor: pointer;

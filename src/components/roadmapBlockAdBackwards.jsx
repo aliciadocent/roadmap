@@ -49,8 +49,14 @@ export default function RoadmapBlockAdBackwards() {
       return isInRoute ? { ...s, class: "clicked" } : s;
     });
 
-    console.log(nieuweSemesters);
+    const nieuweFuncties = functies.map((f) => {  
+      f.class = "not-clicked-function";
+      return f.id === id ? { ...f, class: "clicked-function" } : f;
+    }
+    );
+
     setAlleSemesters(nieuweSemesters);
+    setFuncties(nieuweFuncties);
 
     // === Update functies ===
 
