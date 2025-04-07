@@ -72,6 +72,15 @@
     "url": "https://www.nu.nl"
   },
   {
+    "id": 9,
+    "naam": "Open Learning S2",
+    "type": "Introductie",
+    "semester": ["S2"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven"],
+    "url": "https://studyguide.fontysict.nl/introduction/open-learning/"
+  },
+  {
     "id": 10,
     "naam": "Media Creation",
     "type": "Main",
@@ -160,6 +169,132 @@
     "niveau": ["AD", "BA"],
     "locatie": ["Eindhoven", "Tilburg"],
     "url": "https://www.nu.nl"
+  },
+  {
+    "id": 20,
+    "naam": "Open Learning S3",
+    "type": "Main",
+    "semester": ["S3"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 21,
+    "naam": "Open Learning S4",
+    "type": "Main",
+    "semester": ["S4"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://www.nu.nl"
+  },
+  {
+    "id": 22,
+    "naam": "Business IT & Data Analysis",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven"],
+    "url": "https://studyguide.fontysict.nl/advanced/business-it-data-analysis/"
+  },
+  {
+    "id": 23,
+    "naam": "Complex Software Systems",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://"
+  },
+  {
+    "id": 24,
+    "naam": "Cyber Security Professional",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://"
+  },
+  {
+    "id": 25,
+    "naam": "Enchanced AI Techniqes",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven"],
+    "url": "https://studyguide.fontysict.nl/advanced/enhanced-ai-techniques/"
+  },
+  {
+    "id": 26,
+    "naam": "Game Production",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven"],
+    "url": "https://studyguide.fontysict.nl/advanced/enhanced-ai-techniques/"
+  },
+  {
+    "id": 27,
+    "naam": "Hi-Tech Embedded Software Engineering",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven"],
+    "url": "https://studyguide.fontysict.nl/advanced/enhanced-ai-techniques/"
+  },
+  {
+    "id": 28,
+    "naam": "Human Centered Design",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven", "Tilburg"],
+    "url": "https://"
+  },
+  {
+    "id": 29,
+    "naam": "Immersive Experiences",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven"],
+    "url": "https://studyguide.fontysict.nl/advanced/immersive-experiences/"
+  },
+  {
+    "id": 32,
+    "naam": "Industry 5.0",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven"],
+    "url": "https://studyguide.fontysict.nl/advanced/immersive-experiences/"
+  },
+  {
+    "id": 33,
+    "naam": "Network & Cloud Architecture Innovation",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven"],
+    "url": "https://"
+  },
+  {
+    "id": 34,
+    "naam": "Open Learning S6",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven"],
+    "url": "https://"
+  },
+  {
+    "id": 35,
+    "naam": "Open Learing S7",
+    "type": "Advanced",
+    "semester": ["S6"],
+    "niveau": ["BA"],
+    "locatie": ["Eindhoven"],
+    "url": "https://"
   },
   {
     "id": 30,
